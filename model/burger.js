@@ -1,7 +1,9 @@
 const orm = require("../config/orm.js");
 
-const burgerJS = () = {
-
+const burgerJS = {
+    selectAll(cb) {
+        orm.selectAll("burgers", (res) => cb(res))
+    }
 
     
 }
