@@ -1,4 +1,4 @@
-const connection = require("../config/connection.js");
+const connection = require("./connection");
 
 const printQuestionMarks = (num) => {
     const arr = [];
@@ -20,7 +20,7 @@ const objToSql = (ob) => {
         }
     }
     return arr.toString();
-};
+};  
 
 const orm  = {
 

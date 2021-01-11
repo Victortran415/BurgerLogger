@@ -22,7 +22,7 @@ router.post('/api/burgers', (req, res) => {
     });
 });
 
-//updateOne() = Devour
+// updateOne() = Devour
 router.put('/api/burgers/:id', (req, res) => {
     const condition = `id = ${req.params.id}`;
 
