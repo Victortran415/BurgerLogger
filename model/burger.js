@@ -1,4 +1,3 @@
-const { insertOne } = require("../config/orm.js");
 const orm = require("../config/orm.js");
 
 const burgerJS = {
