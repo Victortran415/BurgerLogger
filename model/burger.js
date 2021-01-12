@@ -1,3 +1,4 @@
+const { deleteOne } = require("../config/orm.js");
 const orm = require("../config/orm.js");
 
 const burgerJS = {
@@ -9,7 +10,10 @@ const burgerJS = {
     },
     updateOne(cols, vals, condition, cb) {
         orm.updateOne("burgers", cols, vals, condition, (res) => cb(res));
-    }
+    },
+    deleteOne(condition, cb) {
+        orm.deleteOne("burgers", condition, (res) => cb(res));
+    },
 }
 
 module.exports = burgerJS;

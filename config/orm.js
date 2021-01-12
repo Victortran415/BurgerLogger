@@ -32,7 +32,16 @@ const orm  = {
 			}
 			cb(result);
 		});
-	},
+    },
+    deleteOne(table, cb) {
+        let queryString = `DELETE FROM ${table}`
+        connection.query(queryString, (err, res) => {
+            if (err) {
+                throw err;
+            }
+            cb(res)
+        })
+    }
 }
 
 module.exports = orm;

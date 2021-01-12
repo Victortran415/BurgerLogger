@@ -29,13 +29,13 @@ To create this application, you would have to run `npm install` which will provi
 
 Steps to this application:
 
-    - First clone the rep, if you do not have node_modules make sure to check [Installation](#installation).
-    - Go to config/connection.js, add your Password
-    - Execute codes from schema and seeds in the db folder to your Workbench.
-    - Run node server.js
-    - Open localhost from browser then play around with the application.
+- First clone the rep, if you do not have node_modules make sure to check [Installation](#installation).
+- Go to config/connection.js, add your Password
+- Execute codes from schema and seeds in the db folder to your Workbench.
+- Run node server.js
+- Open localhost from browser then play around with the application.
 
-    (Video provided below)
+(Video provided below)
 
 ## License
 MIT License

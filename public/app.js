@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	}
 });
 
+//NOTE: Updating 
 const devouredBtn = document.querySelectorAll(".devourBtn");
 
 if (devouredBtn) {
@@ -65,3 +66,5 @@ if (addBurgerBtn) {
 		});
 	});
 }
+
+//NOTE: Delete burger
