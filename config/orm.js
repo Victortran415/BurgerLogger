@@ -1,72 +1,38 @@
 const connection = require("./connection");
 
-const printQuestionMarks = (num) => {
-    const arr = [];
-    for (let i = 0; i < num; i++) {
-        arr.push('?');
-    }
-    return arr.toString();
-};
-
-const objToSql = (ob) => {
-    const arr = [];
-    for (const key in ob) {
-        let value = ob[key];
-        if (Object.hasOwnProperty.call(ob, key)) {
-            if (typeof value === 'string' && value.indexOf(' ') >= 0) {
-                value = `'${value}'`;
-        }
-        arr.push(`${key}=${value}`);
-        }
-    }
-    return arr.toString();
-};  
-
 const orm  = {
-
     selectAll(tableInput, cb) {
         const queryString = `SELECT * FROM ${tableInput}`;
-        connection.query(queryString, (err, res) => {
+        console.log(queryString);
+        connection.query(queryString, [tableInput], (err, res) => {
             if (err) {
                 throw err;
-            }
+            }; 
             cb(res)
         })
     },
     insertOne(table, cols, vals, cb) {
-        let queryString = `INSERT INTO ${table}`;
-
-        queryString += ' (';
-        queryString += cols.toString();
-        queryString += ') ';
-        queryString += 'VALUES (';
-        queryString += printQuestionMarks(vals.length);
-        queryString += ') ';
+        let queryString = `INSERT INTO ${table} (${cols}) VALUES ('${vals}')`;
 
         console.log(queryString);
         connection.query(queryString, vals, (err, res) => {
             if (err) {
                 throw err;
-            }
+            };    
             cb(res)
         })
     },
-    updateOne(table, objColVals, condition, cb) {
-        let queryString = `UPDATE ${table}`;
-
-        queryString += ' SET ';
-        queryString += objToSql(objColVals);
-        queryString += ' WHERE ';
-        queryString += condition;
-
+    
+    updateOne(table, condition, cb) {
+        let queryString = `UPDATE ${table} SET devoured = 1 WHERE ${condition};`;
         console.log(queryString);
-        connection.query(queryString, (err, result) => {
-            if (err) {
-                throw err;
-            }
-            cb(result);
-        });
-    },
+		connection.query(queryString, (err, result) => {
+			if (err) {
+				throw err;
+			}
+			cb(result);
+		});
+	},
 }
 
 module.exports = orm;

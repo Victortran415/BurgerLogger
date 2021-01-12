@@ -1,5 +1,4 @@
 
-
 <div class="container">
     <div class="row">
         <div class="col-md-12 text-center">
@@ -9,23 +8,44 @@
     </div>
 
 
-    <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
+<div class="row">
+    <div class="col-md-6">
+        <h2>List of Delicious Burgers:</h2>
+        <ul class="left-text listBurger">
+            {{#each burgers}}
+            {{#unless devoured}}
+            <li class="pb-2 burgerList">
+                {{burger_name}}
+                <button class="btn btn-primary devourBtn" burgerID="{{id}}" type="button">NOMS!</button>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
 
-        {{/unless}}
-        {{/each}}
-    </ul>
+    <div class="col-md-6">
+        <h2>Devoured Burgers:</h2>
+        <ul class="right-text list-burger">
+            {{#each burgers}}
+            {{#if devoured}}
+            <li class="burgerList">
+                {{burger_name}}
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<hr>
 
-    <h2>Add a Burger</h2>
-    <form id="create-form">
-        <div class="form-burger">
-            <label for="burgerName">Burger Name:</label>
-            <input type="text" id="burgerName" name="name">
-            <button type="submit">Add Burger</button>
+
+<h3>Add A Burger</h3>
+<div class="row col-md-3 mx-auto">
+    <form class="input-group" id="addButtonBtn">
+        <input type="text" id="burgerName" class="form-control" placeholder="Bacon Burger">
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">Add Burger</button>
         </div>
-
-
     </form>
 </div>
 
