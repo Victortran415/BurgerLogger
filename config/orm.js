@@ -33,8 +33,8 @@ const orm  = {
 			cb(result);
 		});
     },
-    deleteOne(table, cb) {
-        let queryString = `DELETE FROM ${table}`
+    deleteOne(table, condition, cb) {
+        let queryString = `DELETE FROM ${table} WHERE ${condition};`
         connection.query(queryString, (err, res) => {
             if (err) {
                 throw err;

@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", (event) => {
 	if (event) {
 		console.info("DOM loaded");
-	}
+    }
+    
 });
 
 //NOTE: Updating 
@@ -68,3 +69,20 @@ if (addBurgerBtn) {
 }
 
 //NOTE: Delete burger
+
+const removeBtn = document.querySelectorAll('.removeBtn');
+
+removeBtn.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault()
+        const id = e.target.getAttribute("burgerID");
+
+        fetch(`/api/burgers/${id}`, {
+            method: 'DELETE',
+        }).then((res) => {
+            console.log(res);
+            console.log(`Deleted burger: ${id}`)
+            location.reload()
+        })
+    })
+})
