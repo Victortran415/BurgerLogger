@@ -1,10 +1,10 @@
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("Double Cheeseburger", false);
+INSERT INTO burgers (burger_name)
+VALUES ("Double Cheeseburger");
 
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("Bacon Burger", false);
+INSERT INTO burgers (burger_name)
+VALUES ("Bacon Burger");
 
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("Chicken Burger", false);
+INSERT INTO burgers (burger_name)
+VALUES ("Chicken Burger");
 
 SELECT * FROM burgers
