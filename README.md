@@ -3,6 +3,10 @@
 ## Description
 The purpose of this application is using specific dependencies such as express, express-handlebars, and mySQL to create a burger logger. Users will be able to add any burger that they want to the list and devour them.
 
+Deployed app via Heroku:
+<a href="<a href=https://nom-on-some-burgers.herokuapp.com>Visit W3Schools</a>
+">Nom-on-Some-Burger</a>
+
 ## Time of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -50,3 +54,5 @@ Study Group Peers: Victor Tran, Geoffrey Jiang, Cameron Wright
 email: victortran415@gmail.com
 
 github: victortran415
+
+
